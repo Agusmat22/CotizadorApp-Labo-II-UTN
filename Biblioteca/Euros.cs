@@ -48,6 +48,8 @@ namespace Billetes
             }
         }
 
+
+
         public double ConversionDolar()
         {
 
@@ -61,11 +63,38 @@ namespace Billetes
             return dolares / cotzRespectoDolar;
 
         }
+        //OPERADORES IMPLICITOS DONDE REALIZAN LA CONVERSION DE EUROS A PESOS Y EUROS A DOLARES
+
+        public static implicit operator Dolar(Euros dinero)
+        {
+            return dinero.ConversionDolar();
+        }
+
+        public static implicit operator Pesos(Euros dinero)
+        {
+            return dinero.ConversionDolar() * 102.65;
+
+        }
+
 
         //GENERO LA SOBRECARGA IMPLICITA y retorna el valor ingresado
         public static implicit operator Euros(double dinero)
         {
             return new Euros(dinero);
+
+        }
+
+        //SOBRECARGA DE OPERADORES 
+        
+        public static bool operator ==(Euros dinero, Euros dinero2)
+        {
+            return dinero.cantidad == dinero2.cantidad;
+
+        }
+
+        public static bool operator !=(Euros dinero, Euros dinero2)
+        {
+            return dinero.cantidad == dinero2.cantidad;
 
         }
 
@@ -81,6 +110,20 @@ namespace Billetes
 
         }
 
+        public static bool operator ==(Euros dinero, Dolar dinero2)
+        {
+            return dinero.ConversionDolar() == dinero2.GetCantidad;
+
+        }
+
+        public static bool operator !=(Euros dinero, Dolar dinero2)
+        {
+            return dinero.ConversionDolar() != dinero2.GetCantidad;
+
+        }
+
+
+
 
         public static Euros operator +(Euros dinero, Pesos dinero2)
         {
@@ -95,6 +138,22 @@ namespace Billetes
             double sumarDolares = dinero.ConversionDolar() + dinero2.GetCantidad;
 
             return ConversionEuro(sumarDolares);
+
+        }
+
+        public static Euros operator -(Euros dinero, Dolar dinero2)
+        {
+            double restaDolares = dinero.ConversionDolar() - dinero2.GetCantidad;
+
+            return ConversionEuro(restaDolares);
+
+        }
+
+        public static Euros operator -(Euros dinero, Pesos dinero2)
+        {
+            double restaDolares = dinero.ConversionDolar() - dinero2.ConversionDolar();
+
+            return ConversionEuro(restaDolares);
 
         }
 
