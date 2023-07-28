@@ -19,6 +19,12 @@ namespace Billetes
 
         }
 
+        public Euros()
+        {
+
+            this.cantidad = 0;
+        }
+
         public Euros(double cantidad)
         {
 
@@ -48,6 +54,14 @@ namespace Billetes
             }
         }
 
+        public static double SetCotizacion
+        {
+            set
+            {
+                cotzRespectoDolar = value;
+            }
+        }
+
         public double ConversionDolar()
         {
 
@@ -66,6 +80,19 @@ namespace Billetes
         public static implicit operator Euros(double dinero)
         {
             return new Euros(dinero);
+
+        }
+
+        public static implicit operator Euros(Pesos peso)
+        {
+            return ConversionEuro(peso.ConversionDolar());
+        }
+
+
+        public static implicit operator Euros(Dolar dolar)
+        {
+
+            return ConversionEuro(dolar.GetCantidad);
 
         }
 

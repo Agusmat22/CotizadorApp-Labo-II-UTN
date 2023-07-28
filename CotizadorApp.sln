@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cotizador", "Cotizador\Cotizador.csproj", "{C44E643F-51C5-448F-A8A5-FFACC5215E31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cotizador", "Cotizador\Cotizador.csproj", "{C44E643F-51C5-448F-A8A5-FFACC5215E31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Billetes", "Biblioteca\Billetes.csproj", "{F2194191-38EF-4438-8EE5-90132ECAC7E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Billetes", "Biblioteca\Billetes.csproj", "{F2194191-38EF-4438-8EE5-90132ECAC7E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conversor", "Conversor\Conversor.csproj", "{033F3E42-263F-4C36-99ED-16510E8DB68E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F2194191-38EF-4438-8EE5-90132ECAC7E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2194191-38EF-4438-8EE5-90132ECAC7E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2194191-38EF-4438-8EE5-90132ECAC7E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{033F3E42-263F-4C36-99ED-16510E8DB68E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{033F3E42-263F-4C36-99ED-16510E8DB68E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{033F3E42-263F-4C36-99ED-16510E8DB68E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{033F3E42-263F-4C36-99ED-16510E8DB68E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

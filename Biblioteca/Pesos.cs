@@ -13,6 +13,13 @@
 
         }
 
+        public Pesos()
+        {
+
+            this.cantidad = 0;
+        }
+
+
         public Pesos(double cantidad)
         {
 
@@ -31,6 +38,14 @@
             get
             {
                 return cantidad;
+            }
+        }
+
+        public static double SetCotizacion
+        {
+            set
+            {
+                cotzRespectoDolar = value;
             }
         }
 
@@ -60,6 +75,21 @@
             return new Pesos(dinero);
         
         }
+
+        public static implicit operator Pesos(Euros euro)
+        {
+
+            return ConversionPesos(euro.ConversionDolar());         
+
+        }
+
+        public static implicit operator Pesos(Dolar dolar)
+        {
+
+            return ConversionPesos(dolar.GetCantidad);
+
+        }
+        
 
         public static bool operator == (Pesos dinero,Euros dinero2)
         {

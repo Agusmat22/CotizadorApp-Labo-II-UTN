@@ -18,6 +18,10 @@ namespace Billetes
             Dolar.cotzRespectoDolar = 1;
 
         }
+        public Dolar()
+        {
+            this.cantidad = 0;
+        }
 
         public Dolar(double cantidad)
         {
@@ -64,6 +68,16 @@ namespace Billetes
         {
             return new Dolar(dinero);
 
+        }
+
+        public static implicit operator Dolar(Euros euro)
+        {
+            return euro.ConversionDolar();
+        }
+
+        public static implicit operator Dolar(Pesos peso)
+        {
+            return peso.ConversionDolar();
         }
 
         public static bool operator ==(Dolar dinero, Pesos dinero2)
