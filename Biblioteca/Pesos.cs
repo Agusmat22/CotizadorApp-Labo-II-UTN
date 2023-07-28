@@ -82,6 +82,21 @@
 
         }
 
+        public static implicit operator Pesos(Euros euro)
+        {
+
+            return ConversionPesos(euro.ConversionDolar());         
+
+        }
+
+        public static implicit operator Pesos(Dolar dolar)
+        {
+
+            return ConversionPesos(dolar.GetCantidad);
+
+        }
+        
+
 
 
         //GENERO LA SOBRECARGA IMPLICITA y retorna el valor ingresado
@@ -104,6 +119,8 @@
             return dinero1.cantidad == dinero2.cantidad;
 
         }
+
+
 
         public static bool operator == (Pesos dinero,Euros dinero2)
         {

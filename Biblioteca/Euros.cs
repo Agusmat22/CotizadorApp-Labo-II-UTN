@@ -98,6 +98,34 @@ namespace Billetes
 
         }
 
+        //SOBRECARGA DE OPERADORES 
+        
+        public static bool operator ==(Euros dinero, Euros dinero2)
+        {
+            return dinero.cantidad == dinero2.cantidad;
+
+        public static implicit operator Euros(Pesos peso)
+        {
+            return ConversionEuro(peso.ConversionDolar());
+        }
+
+
+        public static implicit operator Euros(Dolar dolar)
+        {
+
+            return ConversionEuro(dolar.GetCantidad);
+
+        }
+
+
+        }
+
+        public static bool operator !=(Euros dinero, Euros dinero2)
+        {
+            return dinero.cantidad == dinero2.cantidad;
+
+        }
+
         public static bool operator ==(Euros dinero, Pesos dinero2)
         {
             return dinero.ConversionDolar() == dinero2.ConversionDolar();
