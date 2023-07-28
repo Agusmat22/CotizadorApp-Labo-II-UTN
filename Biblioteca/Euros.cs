@@ -54,6 +54,16 @@ namespace Billetes
             }
         }
 
+        public static double SetCotizacion
+        {
+            set
+            {
+                cotzRespectoDolar = value;
+            }
+        }
+
+
+
         public double ConversionDolar()
         {
 
