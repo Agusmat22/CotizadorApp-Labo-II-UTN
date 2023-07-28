@@ -63,6 +63,20 @@ namespace Billetes
 
         }
 
+        public static implicit operator Euros(Dolar dinero)
+        {
+            return dinero.GetCantidad / 1.17;
+        }
+
+        public static implicit operator Pesos(Dolar dinero)
+        {
+            return dinero.GetCantidad * 102.65;
+
+        }
+
+
+
+
         //GENERO LA SOBRECARGA IMPLICITA y retorna el valor ingresado
         public static implicit operator Dolar(double dinero)
         {
@@ -78,6 +92,20 @@ namespace Billetes
         public static implicit operator Dolar(Pesos peso)
         {
             return peso.ConversionDolar();
+        }
+
+        //SOBRECARGA DE OPERADORES ==
+
+        public static bool operator ==(Dolar dinero, Dolar dinero2)
+        {
+            return dinero.cantidad == dinero2.cantidad;
+
+        }
+
+        public static bool operator !=(Dolar dinero, Dolar dinero2)
+        {
+            return dinero.cantidad == dinero2.cantidad;
+
         }
 
         public static bool operator ==(Dolar dinero, Pesos dinero2)
@@ -104,12 +132,36 @@ namespace Billetes
 
         }
 
-
+        
         public static Dolar operator + (Dolar dinero, Pesos dinero2)
         {
             double sumarDolares = dinero.GetCantidad + dinero2.ConversionDolar();
 
-            return ConversionEuro(sumarDolares);
+            return sumarDolares;
+
+        }
+
+        public static Dolar operator +(Dolar dinero, Euros dinero2)
+        {
+            double sumarDolares = dinero.GetCantidad + dinero2.ConversionDolar();
+
+            return sumarDolares;
+
+        }
+
+        public static Dolar operator - (Dolar dinero, Pesos dinero2)
+        {
+            double restaDolares = dinero.GetCantidad - dinero2.ConversionDolar();
+
+            return restaDolares;
+
+        }
+
+        public static Dolar operator -(Dolar dinero, Euros dinero2)
+        {
+            double restaDolares = dinero.GetCantidad - dinero2.ConversionDolar();
+
+            return restaDolares;
 
         }
 
